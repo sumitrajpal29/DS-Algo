@@ -1,0 +1,75 @@
+Sercond Largest in array
+Sumit — 08/15/2022
+explain kar bhai
+Ayush Mishra — 08/15/2022
+2 13 4 1 3 6 28
+13
+9 3 6 2 9
+5 5 5 5 5
+Sumit — 08/15/2022
+{2,13,4,1,3,6,28,5,5,5,5,5};
+Ayush Mishra — 08/15/2022
+{5, 5, 5, 5, 5,}
+HarshPrakash — 08/15/2022
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int secondLargest(vector<int> arr){
+
+    int largest  = INT_MIN;
+    int secondLargest = INT_MIN;
+
+    for (int i = 0  ; i < arr.size() ; i++){
+        if(arr[i]  > largest){
+            largest = arr[i];
+        }
+    }
+
+     for (int i = 0  ; i < arr.size() ; i++){
+        if(arr[i] >  secondLargest  && arr[i]  < largest){
+            secondLargest = arr[i];
+        }
+    }
+
+    return secondLargest;
+
+}
+
+
+int main() {
+    // Write C++ code here
+   vector<int> vect = {5,5,5,5,5};
+
+   if(secondLargest(vect) == INT_MIN){
+       cout<<"NO SECOND LARGEST";
+   }
+   else{
+       cout<<secondLargest(vect);
+   }
+
+    return 0;
+}
+Sumit — 08/15/2022
+public class MyClass {
+    public static void main(String args[]) {
+      int[] arr={2,13,4,1,3,6,28};
+      System.out.println(secondL(arr));
+    }
+    static int secondL(int[] arr){
+        int L=Integer.MIN_VALUE;
+        int L2=Integer.MIN_VALUE;
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>L) {
+                L2=L;  L=arr[i];
+            }
+        }
+    return L2;
+    }
+}
+Ayush Mishra — 08/15/2022
+int firstMax = arr[0];
+int SecondMAx = Integer.MIN_VALUE:
+Sumit — 08/15/2022
+-2147483648

@@ -1,0 +1,37 @@
+You have been given an integer array/list(ARR) of size N. It has been sorted(in increasing order) and then rotated by some number 'K' in the right hand direction.
+Your task is to write a function that returns the value of 'K', that means, the index from which the array/list has been rotated.
+Example:
+5 6 1 2 3 4
+return 2
+
+public class MyClass {
+    public static void main(String args[]) {
+      int[] arr={3,6, 8, 9, 10};
+      System.out.println(findRotation(arr));
+    }
+    static int findRotation(int[] arr){
+        int rotation=0;
+        for(int i=1; i<arr.length; i++){
+            if(arr[i]<arr[i-1])
+            rotation=i;
+        }
+        return rotation;
+    }
+}
+
+HarshPrakash — 08/15/2022
+int rotationreq(vector<int> arr){
+
+    int count = 0 ;
+
+    for (int i = 0 ; i  < arr.size(); i++){
+        if(arr[i] < arr[i-1]){
+            return count;
+        }
+        else{
+            count++;
+        }
+    }
+
+    return -1;
+}

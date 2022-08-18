@@ -1,0 +1,59 @@
+Sum of two arrayu
+Sumit — 08/15/2022
+aao
+1,2,3,0,-1
+22,4
+23,6,3,0,-1
+Ayush Mishra — 08/15/2022
+6 2 4
+7 5 6
+1 3 8 0
+Two random integer arrays/lists have been given as ARR1 and ARR2 of size N and M respectively. Both the arrays/lists contain numbers from 0 to 9(i.e. single digit integer is present at every index). The idea here is to represent each array/list as an integer in itself of digits N and M.
+You need to find the sum of both the input arrays/list treating them as two integers and put the result in another array/list i.e. output array/list will also contain only single digit at every index.
+HarshPrakash — 08/15/2022
+vector <int> sumofarr(vector<int> arr1 , vector<int> arr2){
+
+
+    //Converting first array to int
+
+   reverse(arr1.begin(), arr1.end());
+    int decimal1 = 1;
+    int num1 = 0;
+    for (auto& it : arr1)
+    {
+    num1 += it * decimal1;
+    decimal1 = 10;
+    }
+
+    //Converting second array to int
+
+    reverse(arr2.begin(), arr2.end());
+    int decimal2 = 1;
+    int num2 = 0;
+    for (auto& it : arr2)
+    {
+    num2 += it decimal2;
+    decimal2 *= 10;
+    }
+
+    int res = num1 + num2;
+
+    //integer to array
+    int rem;
+    vector<int> result;
+    while(res != 0){
+        rem = res%10;
+        result.push_back(rem);
+        res /= 10;
+    }
+
+    //reversing the array(vector)
+    reverse(result.begin(), result.end());
+    return result;
+}
+Ayush Mishra — 08/15/2022
+6 9 8 5
+0
+0 6 9 8 5
+Sumit — 08/16/2022
+https://www.jdoodle.com/iembed/v0/tUr

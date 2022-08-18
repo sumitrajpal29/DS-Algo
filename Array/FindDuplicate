@@ -1,0 +1,40 @@
+find duplicate
+HarshPrakash — 08/11/2022
+#include <bits/stdc++.h>
+using namespace std;
+
+
+vector<int> duplicate(vector<int> arr){
+    vector<int> res;
+
+    for (int i = 0 ; i < arr.size(); i++){
+
+        int flag  = 0;
+        for (int j = 0 ; j <  arr.size(); j++){
+
+            if((arr[i] == arr[j]) && (i != j)){
+                flag++;                                                      break;
+            }
+
+        }
+
+        if(flag != 0  && find(res.begin(), res.end(), arr[i]) == res.end()){
+            res.push_back(arr[i]);
+        }
+
+    }
+
+    return res;
+}
+
+int main() {
+    // Write C++ code here
+    vector<int> arr = {2 , 3 ,1 ,6, 3 ,6 ,2 };
+
+    vector<int> res = duplicate(arr);
+    for (auto x : res){
+        cout<<x<<" ";
+    }
+
+    return 0;
+}

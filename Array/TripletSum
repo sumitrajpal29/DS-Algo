@@ -1,0 +1,38 @@
+triplet sum
+Ayush Mishra — 08/12/2022
+System.out.println();
+public class Practice {
+
+    public static void ThreeSum(int arr[])
+    {
+            for (int i=0;i<arr.length-2;i++)
+        {
+            for (int j=i+1;j<arr.length-1;j++)
+            {
+                for (int k=j+1;k<arr.length;k++)
+                {
+                    if(arr[i] != arr[j] && arr[i] != arr[k] && arr[k] != arr[i])
+                    {
+                    if (arr[i]+arr[j]+arr[k]==0)
+                        {
+                        // nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+                            System.out.print(i );
+                            System.out.print(j);
+                            System.out.print(k + "\n");
+                        }
+                    }
+
+                }
+             }
+       }
+    }
+
+    public static void main(String args[]) {
+
+        int arr[] = {-1,0,1,2,-1,-4};
+
+        ThreeSum(arr);
+
+
+    }
+}

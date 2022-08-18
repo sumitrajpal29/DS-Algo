@@ -1,0 +1,25 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        int[] arr={0, 1, 1, 0, 1, 0, 1,0}; //0001111
+        int[] newArr=zeroOne(arr);
+        for(int i=0;i<newArr.length;i++)
+        System.out.println(newArr[i]);
+    }
+
+    static int[] zeroOne(int[] arr){
+        int l=arr.length;
+        int filled=0;
+        int[] newArr=new int[l];
+
+        for(int i=0;i<l;i++){
+            if(arr[i]==0){
+                newArr[filled++]=0;
+            }
+        }
+        for(int i=filled;i<l;i++){
+            newArr[filled++]=1;
+        }
+
+        return newArr;
+    }
+}

@@ -23,3 +23,34 @@ public class RotateArray {
         return newArr;
     }
 }
+
+
+HarshPrakash — 08/15/2022
+int reversal(int arr[], int low , int high){
+
+    while(low<high){
+
+        swap(arr[low], arr[high]);
+
+        low++;
+        high--;
+
+    }
+
+return 0;
+
+
+}                                                                            //Using Reversal Algorithm
+
+    int reversalLeftRotation(int arr[], int n, int d)
+{
+
+    reversal(arr, 0, d - 1);
+
+    reversal(arr, d, n - 1);
+
+    reversal(arr, 0, n-1);
+
+    return 0;
+}
+SPACE - O(1)  TIME - O(N)

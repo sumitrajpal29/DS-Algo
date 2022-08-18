@@ -1,0 +1,94 @@
+Find min and max element in array
+Sumit — 08/14/2022
+class HelloWorld {
+    public static void main(String[] args) {
+        int[] arr={1,32,-8,0,55,-55};
+        minMax(arr);
+
+    }
+    static void minMax(int[] arr){
+        int min=arr[0];
+        int max=arr[0];
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max) max=arr[i];
+            if(arr[i]<min) min=arr[i];
+        }
+        System.out.println("min: "+min);
+        System.out.println("max: "+max);
+    }
+}
+HarshPrakash — 08/14/2022
+#include <bits/stdc++.h>
+
+using namespace std;
+
+pair<int,int> minMax(vector<int> arr){
+
+    int min  = INT_MAX;
+    int max = INT_MIN;
+
+    for (int i = 0  ; i < arr.size(); i++){
+        if(arr[i] < min){
+            min = arr[i];
+        }
+    }
+     for (int i = 0  ; i < arr.size(); i++){
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+
+    pair<int,int> res;
+    res.first = min;
+    res.second = max;
+
+    return res;
+
+}
+
+
+int main() {
+    // Write C++ code here
+vector<int> arr = { 2,4 , 5 , 78 , 5 , 7  , 65 , 85, 99, 10000 };
+
+pair<int,int> res = minMax(arr);
+
+cout<<"MAXIMUM"<<res.second<<endl;
+cout<<"MINIMUM"<<res.first;
+
+    return 0;
+}
+Ayush Mishra — 08/14/2022
+public class Practice {
+
+
+
+    public static void Try(int arr[])
+    {
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        int size = arr.length;
+
+        for(int i = 0; i < size; i++)
+        {
+            if(arr[i] > max)
+            {
+                max = arr[i];
+            }
+            if(arr[i] < min)
+            {
+                min = arr[i];
+            }
+        }
+        System.out.println(max + " " + min);
+    }
+
+    public static void main(String args[]) {
+
+        int arr[] = {1,2,3,4,5,6,7};
+
+        Try(arr);
+
+    }
+}
