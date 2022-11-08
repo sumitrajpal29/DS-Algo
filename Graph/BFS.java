@@ -20,6 +20,13 @@ public class Graph{
     
     static void BFS(int v){
         boolean[] visited=new boolean[V];
+        BFS(v, visited);
+    }
+        
+    
+    static void BFS(int v, boolean[] visited){
+        
+        // boolean[] visited=new boolean[V];
         
         LinkedList<Integer> q=new LinkedList<>();
         q.offer(v);
@@ -39,16 +46,24 @@ public class Graph{
                 }
             }
         }
+        
+        // Handling disconnected graph
+        for(int i=0; i<V; i++){
+            if(!visited[i])
+            BFS(i,visited);
+        }
     }
     
     public static void main(String[] str){
         System.out.println("Workning!");
         
         Graph g=new Graph(4);
-        g.addEdge(3,0);
-        g.addEdge(1,2);
         g.addEdge(0,1);
-        BFS(3);
+        g.addEdge(1,2);
+        g.addEdge(0,2);
+        // g.addEdge(0,3);
+        
+        BFS(1);
         
     }
     
