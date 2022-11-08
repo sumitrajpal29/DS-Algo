@@ -19,6 +19,12 @@ public class Graph{
     static void DFS(int v){
         boolean visited[]=new boolean[V];
         DFS(v, visited);
+        
+        //Corner case for not connected vertex
+        for(int i=0; i<V; i++){
+            if(!visited[i])
+            DFS(i,visited);
+        }
     }
     static void DFS(int v, boolean[] visited){
         visited[v]=true;
